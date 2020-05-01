@@ -118,3 +118,6 @@ nmap <F8> :TagbarOpenAutoClose<CR>
 set backspace=indent,eol,start
 
 "let g:AutoPairsShortcutFastWrap = '<M-z>'
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
