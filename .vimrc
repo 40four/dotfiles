@@ -1,4 +1,3 @@
-call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
@@ -111,6 +110,7 @@ set shortmess-=S
 
 "Control S save
 nmap <C-s> :w <CR>
+
 "Make current window use full screen
 nmap <Leader>z <C-w>\| <C-w>_
 "Reset all windows back to equal sizes
