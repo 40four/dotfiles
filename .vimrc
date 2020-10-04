@@ -1,14 +1,3 @@
-"function! s:fix_plug_path(path)
-  "if has('win32unix')
-  "\ && executable('cygpath')
-  "\ && executable('git')
-  "\ && split(system('git --version'))[2] =~# 'windows'
-	"return substitute(system('cygpath -m ' . a:path), '\r*\n\+$', '', '')
-  "endif
-  "return a:path
-"endfunction
-"let g:plug_home = s:fix_plug_path($HOME . '/vimfiles/plugged')
-
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -25,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'lfv89/vim-interestingwords'
 Plug 'majutsushi/tagbar'
+Plug 'sainnhe/sonokai'
 
 call plug#end()
 
@@ -42,11 +32,21 @@ if g:os == 'Windows'
 	set undodir=~/vimfiles/_undo//
 	set backupdir=~/vimfiles/_backup//
 	set directory=~/vimfiles/_swp//
+	set shellslash
 else
 	set undodir=~/.vim/.undo//
 	set backupdir=~/.vim/.backup//
 	set directory=~/.vim/.swp//
 endif
+
+"syntax enable
+
+"" User Interface
+"set t_Co=256
+"let base16colorspace=256
+"set background=dark
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set number
 
@@ -58,13 +58,23 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <C-space> coc#refresh()
 
 syntax on
 
 " important!!
 set termguicolors
-
-set shellslash
 
 "Sonokai color options
 " the configuration options should be placed before `colorscheme sonokai`
@@ -101,7 +111,6 @@ set shortmess-=S
 
 "Control S save
 nmap <C-s> :w <CR>
-
 "Make current window use full screen
 nmap <Leader>z <C-w>\| <C-w>_
 "Reset all windows back to equal sizes
@@ -112,8 +121,12 @@ nmap <Leader>d <C-w>l
 nmap <Leader>w <C-w>k
 nmap <Leader>s <C-w>j
 
-"Togge TagBar
+"Toggle TagBar
 "nmap <F8> :TagbarToggle<CR>
 nmap <F8> :TagbarOpenAutoClose<CR>
 
 set backspace=indent,eol,start
+
+"let g:AutoPairsShortcutFastWrap = '<M-z>'
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
