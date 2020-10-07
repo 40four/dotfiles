@@ -14,7 +14,7 @@ cd src
 make
 sudo make install
 
+cd ../..
+
 #Reload shell
 exec $SHELL
-
-cd ../..
