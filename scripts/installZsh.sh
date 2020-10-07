@@ -2,10 +2,10 @@
 
 sudo apt install zsh
 
-exec zsh
-
-sudo usermod -s $(which zsh) $USER
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+chsh -s $(which zsh)
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $HOME/.zshrc
