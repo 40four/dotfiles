@@ -16,4 +16,4 @@ make
 
 sudo make install
 
-source ~/.profile
+exec bash

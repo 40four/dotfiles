@@ -1,1 +1,3 @@
+#Folders will exist after install scripts run
 scripts/vim
+scripts/zsh-syntax-highlighting
