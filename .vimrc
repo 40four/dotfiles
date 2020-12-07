@@ -12,9 +12,9 @@ Plug 'preservim/nerdtree'
 Plug 'myusuf3/numbers.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'lfv89/vim-interestingwords'
 Plug 'majutsushi/tagbar'
 Plug 'sainnhe/sonokai'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -78,7 +78,7 @@ set termguicolors
 
 "Sonokai color options
 " the configuration options should be placed before `colorscheme sonokai`
-let g:sonokai_style = 'andromeda'
+let g:sonokai_style = 'atlantis'
 "let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
@@ -92,7 +92,7 @@ set laststatus=2
 
 "Map shortcuts for NERDTree
 nmap <C-n> :NERDTree <CR>
-nmap <C-N> :NERDTreeFind <CR>
+"nmap <C-N> :NERDTreeFind <CR>
 
 "set rtp+=~/.fzf
 
@@ -121,6 +121,14 @@ nmap <Leader>a <C-w>h
 nmap <Leader>d <C-w>l
 nmap <Leader>w <C-w>k
 nmap <Leader>s <C-w>j
+"Insert blank lines and escape back to normal mode
+nmap <Leader>o o<Esc>
+nmap <Leader>O O<Esc>
+
+"nnoremap <silent> <Leader>F :Files<CR>
+"nnoremap <silent> <Leader>B :Buffers<CR>
+nmap <Leader>F :Files<CR>
+nmap <Leader>B :Buffers<CR>
 
 "Toggle TagBar
 "nmap <F8> :TagbarToggle<CR>
@@ -131,3 +139,9 @@ set backspace=indent,eol,start
 "let g:AutoPairsShortcutFastWrap = '<M-z>'
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+let g:gutentags_cache_dir = "~/.vim/.tags"
+
+highlight CocHighlightText ctermbg=red guibg=darkred
+
+"set guifont=UbuntuMono-Regular:h18
