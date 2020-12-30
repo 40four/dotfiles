@@ -144,4 +144,7 @@ let g:gutentags_cache_dir = "~/.vim/.tags"
 
 highlight CocHighlightText ctermbg=red guibg=darkred
 
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSecyComs = 1
+
 "set guifont=UbuntuMono-Regular:h18

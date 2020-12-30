@@ -1,3 +1,4 @@
-#Folders will exist after install scripts run
+# Folders will exist after install scripts run
 scripts/vim
 scripts/zsh-syntax-highlighting
+scripts/ctags
