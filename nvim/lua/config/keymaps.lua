@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-vim.g.gutentags_cache_dir = ".nvim-backup/.tags"
 -- Write file
 vim.keymap.set("n", "<Leader>w", ":write<CR>")
 -- Resize windows
