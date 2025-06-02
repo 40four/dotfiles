@@ -2,17 +2,15 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug 'honza/vim-snippets'
-Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
-Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
-Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
+-- Plug 'honza/vim-snippets'
+-- Plug 'sheerun/vim-polyglot'
+-- Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
+-- Plug 'junegunn/fzf.vim'
+-- Plug 'airblade/vim-gitgutter'
+-- Plug 'tpope/vim-fugitive'
+-- Plug 'majutsushi/tagbar'
 Plug 'sainnhe/sonokai'
-Plug 'ludovicchabant/vim-gutentags'
+-- Plug 'ludovicchabant/vim-gutentags'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -25,6 +23,11 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'RRethy/vim-illuminate'
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })
+Plug 'windwp/nvim-autopairs'
+Plug 'numToStr/Comment.nvim'
+Plug 'virchau13/tree-sitter-astro'
+Plug 'lewis6991/gitsigns.nvim'
 
 vim.call('plug#end')
 
@@ -32,3 +35,8 @@ require('plugins.cmp')
 require('plugins.nvim-tree')
 require('plugins.lualine')
 require('plugins.illuminate')
+require('plugins.nvim-treesitter')
+require('plugins.nvim-autopairs')
+require('plugins.lspconfig')
+require('plugins.comment')
+require('plugins.gitsigns')
