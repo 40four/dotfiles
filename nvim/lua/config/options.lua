@@ -18,9 +18,11 @@ vim.g.sonokai_style = 'atlantis'
 vim.g.sonokai_disable_italic_comment = 1
 vim.cmd 'colorscheme sonokai'
 
+vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = '80'
 
-vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+-- vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
 
+vim.opt.guifont = "Hack Nerd Font Mono:h14"

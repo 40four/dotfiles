@@ -30,15 +30,18 @@ Plug 'windwp/nvim-autopairs'
 Plug 'numToStr/Comment.nvim'
 Plug 'virchau13/tree-sitter-astro'
 Plug 'lewis6991/gitsigns.nvim'
+Plug "rafamadriz/friendly-snippets"
+Plug 'sindrets/diffview.nvim'
 
 vim.call('plug#end')
 
+require('plugins.luasnip')
+require('plugins.lspconfig')
 require('plugins.cmp')
 require('plugins.nvim-tree')
 require('plugins.lualine')
 require('plugins.illuminate')
 require('plugins.nvim-treesitter')
 require('plugins.nvim-autopairs')
-require('plugins.lspconfig')
 require('plugins.comment')
 require('plugins.gitsigns')
